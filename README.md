@@ -27,13 +27,14 @@ Monotonic Queue. Iterate over all elements. Have a boolean variable `canAdd` set
 If we can still add, add a[i] to front of queue. When we have finished iteration, empty queue into result array.
 
 ### Question 736: Longest Equivalent Sublist After K Increments
-Here we need to find the longest sliding window where we can make all elements equal by incrementing values at most k times. Number of increments in sliding window requires us to find largest element in sliding window. To find largest element in a sliding window use Monotonic Queue.
+Here we need to find the longest sliding window where we can make all elements equal by incrementing values at most k times.
 
-    - Start with `l = 0` - this is left pointer. Then iterate through the list here `i` is the right pointer
-    - An increasing a monotonic queue keeps track of largest element between `l...i`. We also maintain a running sum so for each `i`, do `runningSum += nums[i]`
-    - The required sum to make everything = the largest element is width * max element in window ie `(i-l+1) * deque.peekLast()`
-        - If this value is less than k, then `maxWindow = max(maxWindow, i-l+1)`
-        - Otherwise while the value is greater than k do the following in a loop:
-            - increment l. If the last element in deque was nums[l] it should be removed. also decrement nums[l] from running sum
-            - get new value by doing `(i-l+1) * deque.peekLast()`
-When we are done, we can return the max window.
+Number of increments in sliding window requires us to find largest element in sliding window. To find largest element in a sliding window use Monotonic Queue.
+
+- Start with `l = 0` - this is left pointer. Then iterate through the list here `i` is the right pointer
+- An increasing a monotonic queue keeps track of largest element between `l...i`. We also maintain a running sum so for each `i`, do `runningSum += nums[i]`
+- The required sum to make everything = the largest element is width * max element in window ie `(i-l+1) * deque.peekLast()`
+    - If this value is less than k, then `maxWindow = max(maxWindow, i-l+1)`
+    - Otherwise while the value is greater than k do the following in a loop:
+        - increment l. If the last element in deque was nums[l] it should be removed. also decrement nums[l] from running sum
+        - get new value by doing `(i-l+1) * deque.peekLast()`
