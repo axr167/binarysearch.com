@@ -35,3 +35,4 @@ Here we need to find the longest sliding window where we can make all elements e
   - Otherwise while the value is greater than k do the following in a loop:
     - increment l. If the last element in deque was nums[l] it should be removed. also decrement nums[l] from running sum
     - get new value by doing `(i-l+1) * deque.peekLast()`
+    - test
