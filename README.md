@@ -68,3 +68,22 @@ Do postorder traversal storing sum, count in hashmap. Keep track of maxCount and
 
 ----------
 
+### Question 814: Removing Triple Successive Duplicates
+2 pointer method. Look for substrings that have same-digit and divide by 3. Intuition is that if we have N of the same characters, it takes `N/3` operations to make sure no 3 characters are same.
+
+------
+
+### Question 45: Golden Gate Bridge
+BFS problem where we treat any node that forms edge of island 1 as a possible start point and any node that forms an edge of island 2 as a possible end point. 
+Declare the following: 1) A dist matrix to keep track of visited cells + the distances 2) Row queue and Column queue for bfs. Then do the following:
+
+- Iterate over matrix to find first island. We do this by looking for the first '1' once we have done that do a dfs to mark the island.
+  - In the DFS, if it is an edge mark dist[row][col] = 1 and add element to row queue/col queue. Else mark dist[row][col] = -1.
+- Then do a BFS. 
+  - Nodes are considered during bfs if:
+    - nodes are within bounds of the matrix
+    - dist[row][col] == 0
+  - If matrix[row][col] == 1 we have found the edge of second island and we return distance
+  
+--------
+
