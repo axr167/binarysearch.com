@@ -87,3 +87,7 @@ Declare the following: 1) A dist matrix to keep track of visited cells + the dis
   
 --------
 
+### Question 216: Linked List Deletion
+Declare a head, prev and current. Set current to node and while it is not null do the following - while current.val = target, increment current. If current is not null increment both prev and current. Return head.next.
+
+--------
