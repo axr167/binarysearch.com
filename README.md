@@ -91,3 +91,12 @@ Declare the following: 1) A dist matrix to keep track of visited cells + the dis
 Declare a head, prev and current. Set current to node and while it is not null do the following - while current.val = target, increment current. If current is not null increment both prev and current. Return head.next.
 
 --------
+
+### Question 49: Longest Increasing Subsequence
+DP problem. Let `f(i)` be LIS from `i...n` such that `a[i]` is included.
+
+```
+f(i) = 1 // if i = a.length
+f(i) = max(i, f(j) ) // for j = i+1 ... n && a[i] < a[j]
+```
+Return the max f(i).
