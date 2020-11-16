@@ -100,3 +100,22 @@ f(i) = 1 // if i = a.length
 f(i) = max(i, f(j) ) // for j = i+1 ... n && a[i] < a[j]
 ```
 Return the max f(i).
+
+----------
+
+### Question 52: Autobots, combine!
+Convert int array to string array. Then sort the array using custom comparator `Arrays.sort(a, c)`. The custom comparator takes 2 strings `a, b` and compares `a+b` with `b+a`.
+
+We can use the `string1.compareTo(sring2)` to return the answer. If `string1` > `string2`, positive number s returned else negative number is returned.
+
+----------
+
+### Question 117: H-Index
+Sort the array. If `a[i] >= a.length - i` it means there are at least `a.length - i` elements with `i` citations. To find the best possible value of i, do a binary search.
+
+---------
+
+### Question 121: Sudoku Validator
+Use hashset to check rows, check cols and check grids. In addition to uniqueness we must make sure `a[i][j]` is between `1...9`.
+
+-------
