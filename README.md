@@ -119,3 +119,6 @@ Sort the array. If `a[i] >= a.length - i` it means there are at least `a.length 
 Use hashset to check rows, check cols and check grids. In addition to uniqueness we must make sure `a[i][j]` is between `1...9`.
 
 -------
+
+### Question 17: Run-Length Encoding
+Itertate through the string keeping track of the count.
