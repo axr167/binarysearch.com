@@ -137,3 +137,19 @@ f(i, n) = f(i-1, n-1) + f(i, n-1) // if i = length-1
 ```
 
 The trick is to mod it properly by 1000000007 (which I did not do and so I had to look at the editorial). I need to revise modular arithmetic.
+
+---------
+
+### Question 114: Edit Distance
+DP problem. Recurrence is below:
+
+```
+f(i,j) = 0 // if i=s1.length and j=s2.length
+f(i,j) = s2.length - j // if i = s1.length
+f(i,j) = s1.length - i // if j = s2.length
+f(i,j) = min( f(i,j+1)+1, f(i+1, j)+1, f(i+1, j+1)+1 ) // if s1[i] != s2[j]
+f(i,j) = min( f(i,j+1)+1, f(i+1, j)+1, f(i+1, j+1) ) // if s1[i] = s2[j]
+```
+
+--------
+
