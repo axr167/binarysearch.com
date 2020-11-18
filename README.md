@@ -122,3 +122,18 @@ Use hashset to check rows, check cols and check grids. In addition to uniqueness
 
 ### Question 17: Run-Length Encoding
 Itertate through the string keeping track of the count.
+
+--------
+
+### Question 123: A Maniacal Walk
+DP problem the recurrence is as follows:
+
+```
+f(i, n) = 1 // if i = 0 && n == 0
+f(i, n) = 0 // if n = 0
+f(i, n) = f(i+1, n-1) + f(i-1, n-1) + f(i, n-1) // if 0 < i < length-1
+f(i, n) = f(i+1, n-1) + f(i, n-1) // if i = 0
+f(i, n) = f(i-1, n-1) + f(i, n-1) // if i = length-1
+```
+
+The trick is to mod it properly by 1000000007 (which I did not do and so I had to look at the editorial). I need to revise modular arithmetic.
