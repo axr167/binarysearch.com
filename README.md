@@ -153,3 +153,14 @@ f(i,j) = min( f(i,j+1)+1, f(i+1, j)+1, f(i+1, j+1) ) // if s1[i] = s2[j]
 
 --------
 
+### Question 115: Merge New Interval
+
+2 intervals a, b intersect if: 1st point of a is between points of b; 2nd point of a is between points of b; 1st point of b is between points of a; 2nd point of b is between points of a.
+
+Maintain a boolean variable `added` which will be set to true if we have added the target interval to the result. Then iterate over the intervals.
+
+- If `!added` and target interval's end point is less than current interval's start point, add both intervals to result and set `added` to true.
+- Else if target intersects the current interval, set `target[0] = min(target[0], current[0])` and `target[1] = max(target[1], current[1])`
+- Else there is no intersection so add current interval to result.
+
+In the end if `added` is still false, add `target` to result.
