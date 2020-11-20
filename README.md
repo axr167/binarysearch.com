@@ -164,3 +164,18 @@ Maintain a boolean variable `added` which will be set to true if we have added t
 - Else there is no intersection so add current interval to result.
 
 In the end if `added` is still false, add `target` to result.
+
+-----------
+
+### Question 766: Rolling Median
+
+Maintain a max heap and a min heap. The min heap has the lesser half of all the elements and the max heap has the greater half of all the elements.
+
+When adding:
+- If the element is less than `max.peek()` then it belongs to the lesser half. Add to max heap.
+- Else if the element is greater than `max.peek()` then it belongs to greater half. Add to min heap.
+- Finally rebalance the heaps such that the diff between the sizes is at most 1.
+
+When calling getMedian():
+- If a heap has more elements return the `peek()` value from the heap with more elements
+- Otherwise get the `peek()` value from both heaps and divide by 2
