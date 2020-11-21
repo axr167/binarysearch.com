@@ -179,3 +179,24 @@ When adding:
 When calling getMedian():
 - If a heap has more elements return the `peek()` value from the heap with more elements
 - Otherwise get the `peek()` value from both heaps and divide by 2
+
+-----------
+
+### Question 16: Labyrinthian Possibilities
+
+DP problem. Recurrence is below:
+
+```
+if(i == m-1 && j == n-1)
+    f(i, j) = 1
+if(i == m || j == n)
+    f(i, j) = 0
+if(a[i][j] == 1)
+    f(i, j) = 0
+else
+    f(i, j) = f(i+1, j) + f(i, j+1)
+```
+
+Note that we need to mod by 1000000007.
+
+----------
