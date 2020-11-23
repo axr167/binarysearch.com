@@ -200,3 +200,14 @@ else
 Note that we need to mod by 1000000007.
 
 ----------
+
+### Question 154: Friend Groups
+
+**NOTE:** This problem is incorrect because there are 2 contradicting test cases: `friends = [[0, 1], [1]], expected = 1` and `friends = [[0], [0, 1]], expected = 2`.
+- If the first example is the correct one, we should find number of strongly connected components in a directed graph - Kosaraju can be used for this. 
+- If the second example is correct, we should just assume edges are bidirectional and use union find/dfs for this.
+
+To show as completed, I just copy/pasted a random example from solutions.
+
+--------
+
