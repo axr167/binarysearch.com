@@ -222,17 +222,17 @@ Initialize set and traverse through list. If set contains `k - nums[i]` return t
 Declare result array, fill it with 1s then get cumulative array from left and cumulative array from right like so:
 
 ```
-        product = nums[0];
-        for(int i=1; i<nums.length; i++) {
-            res[i] = res[i] * product;
-            product = product * nums[i];
-        }
+product = nums[0];
+for(int i=1; i<nums.length; i++) {
+    res[i] = res[i] * product;
+    product = product * nums[i];
+}
         
-        product = nums[nums.length-1];
-        for(int i = nums.length-2; i>=0; i--) {
-            res[i] = res[i] * product;
-            product = product * nums[i];
-        }
+product = nums[nums.length-1];
+for(int i = nums.length-2; i>=0; i--) {
+    res[i] = res[i] * product;
+    product = product * nums[i];
+}
 ```
 
 --------
@@ -250,3 +250,15 @@ Standard 2 pointer problem that uses map for storing additional info. Start p1 a
 - While `map.size() > k` remove the char at `p1` from the map and increment the left pointer
 - Keep track of max substring length by doing `max(max, p2-p1+1)`
 
+------------
+
+### Question 12: Collecting Coins
+
+DP problem same as min path sum. Recurrence is below. It can be solved with `n^2` time `n` space.
+
+```
+f(i, j) = a[i][j] // if i = a.length-1 and j = a[0].length-1
+f(i, j) = a[i][j] + f(i+1, j) // if j = a[0].length-1
+f(i, j) = a[i][j] + f(i, j+1) // if i = a.length-1
+f(i, j) = a[i][j] + max(f(i+1, j), f(i, j+1)) // otherwise
+```
