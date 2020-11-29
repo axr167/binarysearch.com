@@ -235,3 +235,18 @@ Declare result array, fill it with 1s then get cumulative array from left and cu
         }
 ```
 
+--------
+
+### Question 7: First Missing Positive
+
+Add all items of array to a hashset. Initialize result to 1. While set contains result, increment result. Finally return result.
+
+---------
+
+### Question 11: Longest Substring with K Distinct Characters
+
+Standard 2 pointer problem that uses map for storing additional info. Start p1 and p2 at index 0. While p2 < str.length()-1 do the following:
+- increment p2 and add the character/count pair to the hashmap.
+- While `map.size() > k` remove the char at `p1` from the map and increment the left pointer
+- Keep track of max substring length by doing `max(max, p2-p1+1)`
+
