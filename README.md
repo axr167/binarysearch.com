@@ -275,3 +275,10 @@ We need to find maximum over a sliding window of k elements. This is a monotonic
 
 
 ------------
+
+### Question 22: Number of Islands
+
+Scan the matrix. Each time a `1` is encountered, increment the count and do a dfs.
+
+------------
+
