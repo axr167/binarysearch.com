@@ -262,3 +262,16 @@ f(i, j) = a[i][j] + f(i+1, j) // if j = a[0].length-1
 f(i, j) = a[i][j] + f(i, j+1) // if i = a.length-1
 f(i, j) = a[i][j] + max(f(i+1, j), f(i, j+1)) // otherwise
 ```
+
+----------
+
+### Question 13: Mad Max
+
+We need to find maximum over a sliding window of k elements. This is a monotonic queue problem where we have a decreasing monotonic queue for k elements and the max element is in the end of the queue (since it is decreasing). 
+- First we fill in the queue with first k elements and set `res[0] = deque.peekLast()` - this is us filling the window initially.
+- Then we slide the window from `i = k to i = a.length-1`
+  - if `deque.peekLast() == a[i-k]` then remove last element by doing `deque.removeLast()`
+  - Add `a[i]` to the queue, increment the index and set `res[index] = deque.peekLast()`
+
+
+------------
