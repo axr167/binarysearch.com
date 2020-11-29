@@ -217,3 +217,21 @@ Initialize set and traverse through list. If set contains `k - nums[i]` return t
 
 ---------
 
+### Question 6: Special Product Array
+
+Declare result array, fill it with 1s then get cumulative array from left and cumulative array from right like so:
+
+```
+        product = nums[0];
+        for(int i=1; i<nums.length; i++) {
+            res[i] = res[i] * product;
+            product = product * nums[i];
+        }
+        
+        product = nums[nums.length-1];
+        for(int i = nums.length-2; i>=0; i--) {
+            res[i] = res[i] * product;
+            product = product * nums[i];
+        }
+```
+
