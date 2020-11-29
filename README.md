@@ -211,3 +211,9 @@ To show as completed, I just copy/pasted a random example from solutions.
 
 --------
 
+### Question 1: Sum of Two Numbers
+
+Initialize set and traverse through list. If set contains `k - nums[i]` return true. Otherwise add `nums[i]` in the set. Return false in the end.
+
+---------
+
