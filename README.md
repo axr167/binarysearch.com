@@ -282,3 +282,7 @@ Scan the matrix. Each time a `1` is encountered, increment the count and do a df
 
 ------------
 
+
+### Question 67: Binary Search Tree Validation
+
+define `f(node, min, max)` where node.val has to be between min and max. If node is null return true. If the node val does not lie between min and max return false. Return the AND of node.left and node.right.
