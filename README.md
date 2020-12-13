@@ -286,3 +286,17 @@ Scan the matrix. Each time a `1` is encountered, increment the count and do a df
 ### Question 67: Binary Search Tree Validation
 
 define `f(node, min, max)` where node.val has to be between min and max. If node is null return true. If the node val does not lie between min and max return false. Return the AND of node.left and node.right.
+
+
+-------------
+
+### Question 123: Longest Increasing Path
+
+DP problem. Define `f(i, j)` as the longest increasing path from `a[i][j]` - this is stored in the DP array. Recurrence is:
+
+    f(i, j) = 1 + max( f(i+1, j), f(i-1, j), f(i, j+1), f(i, j-1) )
+
+Notes about the above recurrence:
+- If i and j in `f(i, j)` is out of bounds, `f(i, j) = 0`
+- We simply do not process the recurrence for values where `f(i+1, j)` etc are less than `f(i, j)` - the recurrence is done only for increasing neighbours.
+  - For decreasing neighbours we use 0 instead.
