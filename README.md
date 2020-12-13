@@ -312,3 +312,16 @@ Notes about the above recurrence:
 - Else put weights[j] on a ship and decrement j
 
 Problem assumes no single person's weight is more than rocketship limit
+
+--------------
+
+### Question 104: Remove Duplicate Numbers
+
+**Note:** Number of unique numbers != number of elements with no repititions. If we have `[0,0,1,2]`, number of unique numbers is `[0,1,2]` but number of elements with no repititions is `[1,2]`.
+
+The idea is to maintain two hashsets. First hashsets has uniques and the other has duplicates. Then iterate over array and do the following:
+
+- If `a[i]` does not exist in either one of the hashsets, add it to uniques
+- If `a[i]` exists in uniques then remove it from uniques and put it in duplicates
+
+Initialize `res` array of length `uniques.size()` and do a second pass through the array adding `a[i]` in res if it is in uniques.
