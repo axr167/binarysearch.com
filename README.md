@@ -300,3 +300,15 @@ Notes about the above recurrence:
 - If i and j in `f(i, j)` is out of bounds, `f(i, j) = 0`
 - We simply do not process the recurrence for values where `f(i+1, j)` etc are less than `f(i, j)` - the recurrence is done only for increasing neighbours.
   - For decreasing neighbours we use 0 instead.
+  
+-----------
+
+### Question 110: Rocketship Rescue
+
+2 pointer problem. Sort the array and set 2 pointers - one from start (i) the other from the end (j). Then while i <= j  do the following:
+
+- If i == j, put weights[i] on a ship and decrement j
+- Else if weights[i] + weights[j] <= limit, put both weights of i and j on a ship. increment i and decrement j
+- Else put weights[j] on a ship and decrement j
+
+Problem assumes no single person's weight is more than rocketship limit
