@@ -325,3 +325,13 @@ The idea is to maintain two hashsets. First hashsets has uniques and the other h
 - If `a[i]` exists in uniques then remove it from uniques and put it in duplicates
 
 Initialize `res` array of length `uniques.size()` and do a second pass through the array adding `a[i]` in res if it is in uniques.
+
+---------------
+
+### Question 216: Edges that Disconnect the Graph
+
+Tarjan's bridge finding algorithm is used here. 
+I have made a video covering the intuition [here](https://www.youtube.com/watch?v=ehNrssKX7wA)
+
+----------------
+
