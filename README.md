@@ -335,3 +335,9 @@ I have made a video covering the intuition [here](https://www.youtube.com/watch?
 
 ----------------
 
+### Question 105: Postfix Notation Evaluation
+Use stack. If it is a number push the number into stack. If it is an operator, pop 2 elements from the stack, do the operation and push the result in the stack
+
+**Note:** Use a stack of type Long. I was using stack of type int and I got wrong answer because of under/overflow - this is tricky to debug in java and I had no idea why my solution was incorrect until I unlocked editorials.
+
+-----------------
