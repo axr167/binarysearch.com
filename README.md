@@ -341,3 +341,17 @@ Use stack. If it is a number push the number into stack. If it is an operator, p
 **Note:** Use a stack of type Long. I was using stack of type int and I got wrong answer because of under/overflow - this is tricky to debug in java and I had no idea why my solution was incorrect until I unlocked editorials.
 
 -----------------
+
+### Question 8: Decode Message
+DP problem. Define `f(i)` as number of ways to decode `string[i...end]`. The recurrence is as follows:
+
+```
+f(i) = 1 // if i = s.length()
+f(i) = 0 // if s[i] = 0
+f(i) = f(i+1) + f(i+2) // if Integer.parseInt( s.substring(i, i+2) ) <=26
+f(i) = f(i+1) // otherwise
+```
+
+This can be solved in `O(n)` time and `O(1)` space bottom up.
+
+**Note:** Be careful about the edge case in recurrence #3. We also need to add a check making sure that `i+1 < message.length()` to avoid out of bounds exception.
