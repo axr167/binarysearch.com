@@ -355,3 +355,11 @@ f(i) = f(i+1) // otherwise
 This can be solved in `O(n)` time and `O(1)` space bottom up.
 
 **Note:** Be careful about the edge case in recurrence #3. We also need to add a check making sure that `i+1 < message.length()` to avoid out of bounds exception.
+
+----------------
+
+### Question 215: Linked List Deletion
+
+Create head node and set `head.next = root`. Set `current = head` and while `current.next` is not null do the following:
+- If `current.next.val == target` then set `current.next = current.next.next`
+- Else set `current = current.next`
