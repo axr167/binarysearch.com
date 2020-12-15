@@ -363,3 +363,28 @@ This can be solved in `O(n)` time and `O(1)` space bottom up.
 Create head node and set `head.next = root`. Set `current = head` and while `current.next` is not null do the following:
 - If `current.next.val == target` then set `current.next = current.next.next`
 - Else set `current = current.next`
+
+-----------------
+
+### Question 266: Number of Hops
+
+Two ways to do this problem. **Solution 1** is an `O(n^2)` time `O(n)` space solution that uses DP. Define f(i) as the number of hops to get to last position from `i`. Recurrence is below.
+
+```
+f(i) = 0 // if i = a.length-1
+f(i) = max // if a[i] = 0
+f(i) = 1 + min(f(i+1)...f(i+a[i])) // otherwise
+```
+An edge case is that in recurrence 3, the min could be `max` so we need to be careful we dont add 1 to it. This solution **works for leetcode but gives a TLE for binarysearch** hence we need to use solution 2.
+
+**Solution 2** is BFS based and `O(n)` time with constant space. Keep track of: 
+- The index we need to make a jump from - this is initially set to 0. This represents all the elements reachable from 1 bfs jump.
+- The max possible index we can reach - this is `Math.max(max, i+a[i])`
+- The count of jumps so far
+
+Since there is a guarantee that we will always reach the end we can do the following: 
+- loop over the list of nums and update the max possible index we can reach - this represents a BFS run.
+- If this is greater than `nums.length-1` make a jump from the current index and return number of jumps.
+- Otherwise if `i == index_to_jump_from`
+ - Make a jump
+ - Set `index_to_jump_from = max`
