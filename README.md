@@ -388,3 +388,26 @@ Since there is a guarantee that we will always reach the end we can do the follo
 - Otherwise if `i == index_to_jump_from`
  - Make a jump
  - Set `index_to_jump_from = max`
+ 
+---------------
+
+### Question 52: Zipped String
+DP problem. Recurrence is below.
+
+```
+let k be index for c. we can get k's value by doing i+j
+        
+f(i, j) = true // if i = a.length && j == b.length
+if i == a.length
+    f(i, j) = false // if b[j] != c[k]
+    f(i, j) = f(i, j+1) // otherwise
+if j == b.length
+    f(i, j) = false // if a[i] != c[k]
+    f(i, j) = f(i+1, j) // otherwise
+f(i, j) = false // if a[i] != c[k] && b[j]  != c[k]
+f(i, j) = f(i+1, j) || f(i, j+1) // if a[i] = b[j] = c[k]
+f(i, j) = f(i+1, j) // if a[i] = c[k]
+f(i, j) = f(i, j+1) // if b[j] = c[k]
+```
+
+This can be done in `O(n^2)` time and `O(n)` space.
