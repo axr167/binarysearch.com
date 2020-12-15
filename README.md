@@ -411,3 +411,13 @@ f(i, j) = f(i, j+1) // if b[j] = c[k]
 ```
 
 This can be done in `O(n^2)` time and `O(n)` space.
+
+--------------
+
+### Question 101: Longest Consecutive Duplicate String
+
+Use variables max to keep track of max substring seen so far with duplicates and current which keeps track of current duplicate count. Set max = current = 1 then iterate over string from index `1...s.length()`.
+
+- If `s.charAt(i) == s.charAt(i-1)` then set `current += 1` and `max = max(max, current)`
+- Else it means we are at new char. Set `current = 1`
+- Return max in the end
