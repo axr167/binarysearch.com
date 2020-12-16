@@ -438,4 +438,13 @@ In the bfs do the following:
 
 ### Question 84: Break String Into Words
 
-DP problem
+DP problem. Here we define `f(i, j)` as a function that returns true if `s[i...s.length-1]` can be split into words. The variable j represents the end of the substring we are currently looking at.
+
+The recurrence is as follows:
+
+```
+f(s, i, j) = true // if i = s.length
+f(s, i, j) = false // if j = s.length
+f(s, i, j) = f(s, j+1, j+1) || f(s, i, j+1) // if set.contains(s[i...j])
+f(s, i, j) = f(s, i, j+1) // otherwise
+```
