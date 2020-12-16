@@ -421,3 +421,15 @@ Use variables max to keep track of max substring seen so far with duplicates and
 - If `s.charAt(i) == s.charAt(i-1)` then set `current += 1` and `max = max(max, current)`
 - Else it means we are at new char. Set `current = 1`
 - Return max in the end
+
+--------------
+
+### Question 42: Bipartite Graph
+
+Two coloring problem - this is an application of bfs. Iterate over all nodes. If `visited[node] == 0` mark `visited[node] = 1` and start a bfs at node.
+
+In the bfs do the following:
+
+- Add initial node to queue and while queue is not empty pop the queue - let the popped element be `current`
+- For each child of current if `visited[child] != 0 && visited[child] != -1 * visited[current]` there is a violation and graph is not bipartite.
+- Otherwise if `visited[child] == 0` then set `visited[child] = visited[current] * -1`
