@@ -448,3 +448,26 @@ f(s, i, j) = false // if j = s.length
 f(s, i, j) = f(s, j+1, j+1) || f(s, i, j+1) // if set.contains(s[i...j])
 f(s, i, j) = f(s, i, j+1) // otherwise
 ```
+
+Note: Bottom up gives TLE so use topdown
+
+---------------
+
+### Question 159: Merging K Sorted Lists
+
+Can be done in 2 ways. Method 1 is to use a min heap and keep popping stuff. Method 2 is to use divide and conquer which is explained here. Define 2 functions: 
+- The first is `f1(int[] a, int[] b)` that creates a new list `int[] res = new int[a.length+b.length]` which contains the sorted elements of a and b.
+- The second is `f2(int lo, int hi, int[][] lists)` that takes all the lists from `lists[lo] ... lists[hi]` and stores them in `lists[lo]`
+  - if `lo == hi` it is the base case so return `lists[lo]`
+  - Else do `mid = (lo+hi)/2` and do the following:
+    - lists[lo] = f2(lo, mid, lists) and lists[mid] = f2(lo, mid, lists)
+    - lists[lo] = f1(lists[lo], lists[mid]) and return lists[lo].
+- In the end return `lists[0]`
+
+---------------
+
+### Question 77: Merging Two Sorted Lists
+
+Function f1 from above
+
+-----------
