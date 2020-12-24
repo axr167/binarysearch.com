@@ -471,3 +471,30 @@ Can be done in 2 ways. Method 1 is to use a min heap and keep popping stuff. Met
 Function f1 from above
 
 -----------
+
+### Question 27: Longest Common Subsequence
+
+DP problem. We define `f(i, j)` as LCS for substrings from `s1[i...n]` and `s2[j...n]`. Recurrence below:
+
+```
+f(i, j) = 0 // if i == s1.length || j == s2.length
+f(i, j) = max(1+f(i+1, j+1), f(i+1, j), f(i, j+1))  // if s1[i] == s2[j]
+f(i, j) = max(f(i+1, j), f(i, j+1))
+```
+
+-------------
+
+
+### Question 205: Longest Common Substring
+
+DP problem. We define `f(i, j)` as LCS for substrings from `s1[i...n]` and `s2[j...n]` where the substrings start at i and j. This means unlike the previous problem, the LCS needs to start at `s[i]` and `s[j]` for each computation. The recurrence is below:
+
+```
+f(i, j) = 0 // if i == s1.length || j == s2.length
+f(i, j) = 1 + f(i+1, j+1) // if s1[i] == s2[j]
+f(i, j) = 0 // if s1[i] != s2[j]
+
+return max f(i, j)
+```
+
+-------------
