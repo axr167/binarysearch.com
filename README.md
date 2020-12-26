@@ -498,3 +498,9 @@ return max f(i, j)
 ```
 
 -------------
+
+### Question 95: Detecting an Odd Length Cycle
+
+Do a BFS on each unvisited node keeping track of the index. If a node tries to visit an already visited node, its a cycle. We can check the number of nodes in the cycle by doing `index[node] - index[alreadyVisitedNode]`. If this number is odd, we can return true.
+
+----------
