@@ -504,3 +504,9 @@ return max f(i, j)
 Do a BFS on each unvisited node keeping track of the index. If a node tries to visit an already visited node, its a cycle. We can check the number of nodes in the cycle by doing `index[node] - index[alreadyVisitedNode]`. If this number is odd, we can return true.
 
 ----------
+
+### Question 215: Distributed Systems
+
+Dijkstra's algorithm. The small text here is that nodes are bidirectional so if we have `[0, 1, 2]` in the edge list, we also need to create an entry for `[1, 0, 2]`
+
+----------
